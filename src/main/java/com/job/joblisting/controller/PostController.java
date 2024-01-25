@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
 public class PostController
 {
 
@@ -29,14 +29,15 @@ public class PostController
     }
 
     @GetMapping("/allPosts")
-    @CrossOrigin
+ //   @CrossOrigin
     public List<Post> getAllPosts()
     {
+        System.out.println("hello");
         return repo.findAll();
     }
     // posts/java
     @GetMapping("/posts/{text}")
-    @CrossOrigin
+ //   @CrossOrigin
     public List<Post> search(@PathVariable String text)
     {
         return srepo.findByText(text);

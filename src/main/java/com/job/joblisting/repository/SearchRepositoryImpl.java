@@ -9,13 +9,15 @@ import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.convert.MongoConverter;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 
-@Component
+//@Component
+@Service
 public class SearchRepositoryImpl implements SearchRepository{
 
     @Autowired
@@ -29,8 +31,8 @@ public class SearchRepositoryImpl implements SearchRepository{
 
         final List<Post> posts = new ArrayList<>();
 
-        MongoDatabase database = client.getDatabase("telusko");
-        MongoCollection<Document> collection = database.getCollection("JobPost");
+        MongoDatabase database = client.getDatabase("joblist");
+        MongoCollection<Document> collection = database.getCollection("jobpost");
 
         AggregateIterable<Document> result = collection.aggregate(Arrays.asList(new Document("$search",
                         new Document("text",
