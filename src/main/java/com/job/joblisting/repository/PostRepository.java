@@ -1,6 +1,6 @@
-package com.telusko.joblisting.repository;
+package com.job.joblisting.repository;
 
-import com.telusko.joblisting.model.Post;
+import com.job.joblisting.model.Post;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
